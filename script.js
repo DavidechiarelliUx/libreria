@@ -17,7 +17,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
         console.log(bookChar.title);
         const col = document.createElement("div");
         const card = document.createElement("div");
-        const image = document.createElement("img");
+        const image = document.createElement("img", "img-fluid");
         const title =document.createElement("h5");
         const category = document.createElement("p");
         const price= document.createElement("h3");
@@ -26,8 +26,8 @@ fetch("https://striveschool-api.herokuapp.com/books")
         const colRemove = document.createElement("div");
         const removeBtn = document.createElement("button");
         const addCartBtn =document.createElement("button");
-
-
+        const buttonAdd = document.querySelectorAll(".addButton");
+        const bodyModal = document.querySelector(".modal-body");
 
         col.classList.add("col-6", "col-md-4", "col-lg-3", "mt-3");
         card.classList.add("card", "d-flex", "text-center");
@@ -48,6 +48,33 @@ fetch("https://striveschool-api.herokuapp.com/books")
         addCartBtn.textContent="add";
         removeBtn.textContent="remove";
 
+        removeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log("mi hai cliccato");
+            card.classList.add("d-none");
+        });
+
+        addCartBtn.addEventListener("click", () => {
+          
+            console.log("mi hai cliccato");
+
+            const divBookCartCol = document.createElement("div");
+            const divBookCart = document.createElement("div");
+            const titleCartBook = document.createElement("h3");
+
+            divBookCartCol.id = "addElementDiv";
+
+            divBookCartCol.classList.add("col-12");
+            divBookCart.classList.add("bg-secondary");
+            titleCartBook.classList.add("text-primary");
+
+            titleCartBook.textContent = bookChar.title;
+
+            divBookCart.appendChild(titleCartBook);
+            divBookCartCol.appendChild(divBookCart);
+            bodyModal.appendChild(divBookCartCol);
+          
+        });
 
         card.appendChild(image);
         card.appendChild(category);
@@ -60,9 +87,10 @@ fetch("https://striveschool-api.herokuapp.com/books")
         colRemove.appendChild(removeBtn);
         col.appendChild(card);
         row.appendChild(col);
-        removeCard();
-        openModal();
+       
+        // openModal();
     });
+    //  removeCard();
   })
   .catch((err) => console.log(err));
 
@@ -84,17 +112,17 @@ fetch("https://striveschool-api.herokuapp.com/books")
 //             </div>
 //         </div>
 
-function removeCard(){
-  const buttons = document.querySelectorAll(".clickRemove");
-  const cards = document.querySelectorAll(".card");
-  buttons.forEach((button, index) => {
-    button.addEventListener("click", (e) => {
-        e.preventDefault();
-      console.log("mi hai cliccato");
-      cards[index].classList.add("d-none"); 
-    });
-  });
-}
+// function removeCard(){
+//   const buttons = document.querySelectorAll(".clickRemove");
+//   const cards = document.querySelectorAll(".card");
+//   buttons.forEach((button, index) => {
+//     button.addEventListener("click", (e) => {
+//         e.preventDefault();
+//       console.log("mi hai cliccato");
+//       cards[index].classList.add("d-none"); 
+//     });
+//   });
+// }
 
 function openModal(){
     const buttonAdd = document.querySelectorAll(".addButton")
