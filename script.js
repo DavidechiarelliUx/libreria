@@ -112,6 +112,9 @@ fetch("https://striveschool-api.herokuapp.com/books")
 //             </div>
 //         </div>
 
+
+// lascio questo solo per capire quello che avevo fatto prima di capire l'errore 
+//function remove card e open modal direttamente creata all'interno della mia fecht senza il bisgno dell'utilizzo del foreach
 // function removeCard(){
 //   const buttons = document.querySelectorAll(".clickRemove");
 //   const cards = document.querySelectorAll(".card");
@@ -159,4 +162,4 @@ fetch("https://striveschool-api.herokuapp.com/books")
 
 //     });
 // }
-d
+
