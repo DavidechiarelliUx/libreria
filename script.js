@@ -124,39 +124,39 @@ fetch("https://striveschool-api.herokuapp.com/books")
 //   });
 // }
 
-function openModal(){
-    const buttonAdd = document.querySelectorAll(".addButton")
-    const bodyModal = document.querySelector(".modal-body");
-    const cards = document.querySelectorAll(".card");
+// function openModal(){
+//     const buttonAdd = document.querySelectorAll(".addButton")
+//     const bodyModal = document.querySelector(".modal-body");
+//     const cards = document.querySelectorAll(".card");
 
-    buttonAdd.forEach((button, index) => {
+//     buttonAdd.forEach((button, index) => {
     
-        button.addEventListener("click", () => {
-            const element = document.getElementById("addElementDiv");
-            if(!element){
+//         button.addEventListener("click", () => {
+//             const element = document.getElementById("addElementDiv");
+//             if(!element){
 
-                console.log("mi hai cliccato");
+//                 console.log("mi hai cliccato");
 
-                const divBookCartCol = document.createElement("div");
-                const divBookCart = document.createElement("div");
-                const titleCartBook = document.createElement("h3");
+//                 const divBookCartCol = document.createElement("div");
+//                 const divBookCart = document.createElement("div");
+//                 const titleCartBook = document.createElement("h3");
 
-                divBookCartCol.id=("addElementDiv");
+//                 divBookCartCol.id=("addElementDiv");
 
-                divBookCartCol.classList.add("col-12");
-                divBookCart.classList.add("bg-secondary");
-                titleCartBook.classList.add("text-primary");
+//                 divBookCartCol.classList.add("col-12");
+//                 divBookCart.classList.add("bg-secondary");
+//                 titleCartBook.classList.add("text-primary");
 
-                titleCartBook.textContent = "mi hai aggiunto";
+//                 titleCartBook.textContent = "mi hai aggiunto";
 
-                divBookCart.appendChild(titleCartBook);
-                divBookCartCol.appendChild(divBookCart);
-                bodyModal.appendChild(divBookCartCol);
-            }else {
-                console.log("l'elemento è stato aggiunto")
-            }
-        })
+//                 divBookCart.appendChild(titleCartBook);
+//                 divBookCartCol.appendChild(divBookCart);
+//                 bodyModal.appendChild(divBookCartCol);
+//             }else {
+//                 console.log("l'elemento è stato aggiunto")
+//             }
+//         })
 
-    });
-}
-
+//     });
+// }
+d
